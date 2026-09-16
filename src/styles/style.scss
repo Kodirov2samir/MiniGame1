@@ -1,1 +1,3 @@
-@import 'global', 'tokens', 'breakpoints';
+@use 'global';
+@use 'tokens';
+@use 'breakpoints';
