@@ -1,7 +1,1 @@
-$bg-color: #1a1a1a;
-$text-color: #e64a19;
-
-body {
-  background-color: $bg-color;
-  color: $text-color;
-}
+@import 'global', 'tokens', 'breakpoints';
