@@ -27,7 +27,9 @@ const gamesData = allTheGamesData as GamesDataResponse;
 
 export function newGames(): string {
   const gamesList: Game[] = gamesData.data;
-  const initialCurrentIndex = 1;
+  const initialCurrentIndex = 0;
+  console.log(initialCurrentIndex);
+
   const images = import.meta.glob<{ default: string }>(
     '../../assets/*-card.jpg',
     { eager: true }
@@ -42,8 +44,8 @@ export function newGames(): string {
     .map(
       (game, i) => `
       <div class="game-card ${initialCurrentIndex === i ? 'active-game' : i - 1 === initialCurrentIndex ? 'near-active' : i + 1 === initialCurrentIndex ? 'near-active' : 'non-active'}" style="--bg-img: url('${getBgUrl(game.slug)}');">
-        <h3>${game.name}</h3>
-        <div>
+      <h3>${game.name}</h3>
+      <div class="card-info-wrap" >
         <span>${game.rating}</span>
         <span>${game.likesCount}</span>
         </div>
