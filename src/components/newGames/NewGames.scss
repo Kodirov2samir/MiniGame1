@@ -4,9 +4,33 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .games-list {
   display: flex;
+  align-items: center;
+  gap: 16px; // Отступ между карточками
+  width: 100%;
 }
+
 .game-card {
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+
   @include card-bg-image(--bg-img);
+
+  &.active-game {
+    flex: 2 0 0%;
+    color: aqua;
+  }
+
+  &.near-active {
+    flex: 1 0 0%;
+    color: brown;
+  }
+
+  &.non-active {
+    flex: 0.5 0 0%;
+    color: white;
+  }
 }

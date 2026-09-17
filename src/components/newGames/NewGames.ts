@@ -27,6 +27,7 @@ const gamesData = allTheGamesData as GamesDataResponse;
 
 export function newGames(): string {
   const gamesList: Game[] = gamesData.data;
+  const initialCurrentIndex = 1;
   const images = import.meta.glob<{ default: string }>(
     '../../assets/*-card.jpg',
     { eager: true }
@@ -39,11 +40,13 @@ export function newGames(): string {
   const gamesCardsHtml = gamesList
     .slice(0, 5)
     .map(
-      (game) => `
-      <div class="game-card" style="--bg-img: url('${getBgUrl(game.slug)}');">
+      (game, i) => `
+      <div class="game-card ${initialCurrentIndex === i ? 'active-game' : i - 1 === initialCurrentIndex ? 'near-active' : i + 1 === initialCurrentIndex ? 'near-active' : 'non-active'}" style="--bg-img: url('${getBgUrl(game.slug)}');">
         <h3>${game.name}</h3>
-        <p>${game.shortDescription}</p>
-        <span>${game.price}</span>
+        <div>
+        <span>${game.rating}</span>
+        <span>${game.likesCount}</span>
+        </div>
       </div>
     `
     )
@@ -58,8 +61,8 @@ export function newGames(): string {
         <h2>New Games</h2>
       </div>
       <div class="new-games-controls">
-        <button class="slider-button" type="button" aria-label="Previous games">&lt;-</button>
-        <button class="slider-button slider-button-active" type="button" aria-label="Next games">-&gt;</button>
+        <button class="slider-button previous-game-button" type="button" aria-label="Previous games">&lt;-</button>
+        <button class="slider-button slider-button-active next-game-button" type="button" aria-label="Next games">-&gt;</button>
       </div>
     </div>
     <div class="games-list">
@@ -69,4 +72,51 @@ export function newGames(): string {
    
   </section>
   `;
+}
+
+export function initNewGamesEvents(): void {
+  const gamesList = document.querySelector('.games-list');
+  const previousButton = document.querySelector('.previous-game-button');
+  const nextButton = document.querySelector('.next-game-button');
+
+  if (
+    !gamesList ||
+    !(previousButton instanceof HTMLButtonElement) ||
+    !(nextButton instanceof HTMLButtonElement)
+  ) {
+    return;
+  }
+
+  let currentInd = 1;
+  const cards = Array.from(gamesList.querySelectorAll('.game-card'));
+
+  const updateActiveCard = (): void => {
+    cards.forEach((card, index) => {
+      card.classList.toggle('active-game', index === currentInd);
+      card.classList.toggle(
+        'near-active',
+        index === currentInd - 1 || index === currentInd + 1
+      );
+      card.classList.toggle(
+        'non-active',
+        index !== currentInd &&
+          index !== currentInd - 1 &&
+          index !== currentInd + 1
+      );
+    });
+  };
+
+  previousButton.addEventListener('click', () => {
+    if (currentInd > 0) {
+      currentInd -= 1;
+      updateActiveCard();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentInd < cards.length - 1) {
+      currentInd += 1;
+      updateActiveCard();
+    }
+  });
 }

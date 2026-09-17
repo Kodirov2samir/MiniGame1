@@ -1,7 +1,7 @@
 import './styles/style.scss';
 import { siteHeader, initHeaderEvents } from './components/header/Header';
 import { hero } from './components/hero/Hero';
-import { newGames } from './components/newGames/NewGames';
+import { initNewGamesEvents, newGames } from './components/newGames/NewGames';
 const app = document.getElementById('app');
 if (app) {
   app.innerHTML = `${siteHeader()} <main>
@@ -9,4 +9,5 @@ if (app) {
   ${newGames()}
   </main>`;
   initHeaderEvents();
+  initNewGamesEvents();
 }
