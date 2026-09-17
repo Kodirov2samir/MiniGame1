@@ -1,9 +1,9 @@
 import './Header.scss';
-import siteLogo from '../assets/site-logo.png';
+import siteLogo from '../../assets/site-logo.png';
 
 export function siteHeader(): string {
   return /* html */ `
-    <header class="site-header">
+    <header class="site-header container">
       <div class="logo-box">
         <img src="${siteLogo}" alt="site logo" class="logo-img" />
         <h1 class="title">MiniGames</h1>

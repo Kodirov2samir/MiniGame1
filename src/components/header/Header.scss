@@ -1,5 +1,5 @@
-@use '../styles/tokens' as t;
-@use '../styles/breakpoints' as b;
+@use '../../styles//tokens' as t;
+@use '../../styles/breakpoints' as b;
 
 @mixin flex-align {
   display: flex;
@@ -17,6 +17,7 @@
   width: 100%;
   padding: 10px 20px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 
   .logo-box {
     @include flex-align;
