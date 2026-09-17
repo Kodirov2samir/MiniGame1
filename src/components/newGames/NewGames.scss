@@ -1,0 +1,12 @@
+@mixin card-bg-image($var-name) {
+  background-image: var($var-name);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.games-list {
+  display: flex;
+}
+.game-card {
+  @include card-bg-image(--bg-img);
+}
