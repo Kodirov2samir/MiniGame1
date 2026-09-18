@@ -1,20 +1,74 @@
 @use '../../styles/tokens' as t;
 @use '../../styles/breakpoints' as b;
 
+.leaderboard-section {
+  margin-top: 70px;
+  margin-bottom: 40px;
+}
 .section-table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
   box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: t.$shadow-black;
+  .section-table-head {
+    background-color: #3a2ebf;
+    color: white;
+    @include b.mobile {
+      font-size: 10px;
+    }
+  }
+  .section-table-body {
+    @include b.mobile {
+      font-size: 9px;
+    }
+    .name-initials {
+      margin-right: 5px;
+      padding: 5px;
+      color: white;
+      background-color: t.$color-btn;
+      border-radius: 50%;
+    }
+    tr {
+      background-color: white;
+
+      &:nth-child(even) {
+        background-color: #f9f8f3;
+      }
+
+      @include b.tablet {
+        &:nth-child(n + 4) {
+          display: none;
+        }
+      }
+    }
+  }
+  .hide-mobile {
+    @include b.mobile {
+      display: none;
+    }
+  }
 }
 th,
 td {
-  padding: 8px 12px;
+  padding: 20px 12px;
   text-align: left;
+  @include b.mobile {
+    padding: 7px 4px;
+  }
 }
-.name-initials {
-  margin-right: 5px;
-  padding: 5px;
-  color: white;
+.title-mark {
+  display: inline-block;
   background-color: t.$color-btn;
-  border-radius: 50%;
+  width: 7px;
+  align-self: stretch;
+  border-radius: 10px;
+}
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }

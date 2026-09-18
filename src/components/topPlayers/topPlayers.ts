@@ -25,15 +25,15 @@ export function topPlayers(): string {
   const eachPlayer = players
     .map((item) => {
       return `
-    <tr>
-    <td>#${item.rank}</td>
+    <tr style="${item.rank % 2 === 0 ? 'background-color:#F9F8F3' : 'background-color:white'}">
+    <td style="${item.rank === 1 ? 'color:#FFD02B' : ''}"">#${item.rank}</td>
     <td><span class="name-initials" ">${item.playerName
       .split('')
       .filter(
         (item) => item.toUpperCase() === item && item !== '_' && isNaN(+item)
       )
       .join('')}</span>${item.playerName}</td>
-    <td>${item.gamesPlayed}</td>
+    <td class="hide-mobile">${item.gamesPlayed}</td>
     <td>${item.totalScore}</td>
     <td>${item.streakDays}</td>
     <td>${item.favoriteGameName}</td>
@@ -42,10 +42,14 @@ export function topPlayers(): string {
     })
     .join('');
   return /*html */ `
-  <section>
+  <section class="leaderboard-section">
     <div class="container">
+      <div class="title-wrapper">
+        <span class="title-mark"></span>
+        <h2>Top Players This Week</h2>
+      </div>
       <table class="section-table">
-        <thead>
+        <thead class="section-table-head">
           <tr>
             <th>
               RANK
@@ -53,7 +57,7 @@ export function topPlayers(): string {
             <th>
               PLAYER
             </th>
-            <th>
+            <th class="hide-mobile">
               GAMES PLAYED
             </th>
             <th>
@@ -67,7 +71,7 @@ export function topPlayers(): string {
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="section-table-body">
           ${eachPlayer}
         </tbody>
       </table>
