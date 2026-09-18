@@ -1,0 +1,20 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/breakpoints' as b;
+
+.section-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+th,
+td {
+  padding: 8px 12px;
+  text-align: left;
+}
+.name-initials {
+  margin-right: 5px;
+  padding: 5px;
+  color: white;
+  background-color: t.$color-btn;
+  border-radius: 50%;
+}
