@@ -30,7 +30,6 @@ const gamesData = allTheGamesData as GamesDataResponse;
 export function newGames(): string {
   const gamesList: Game[] = gamesData.data;
   const initialCurrentIndex = 0;
-  console.log(initialCurrentIndex);
 
   const images = import.meta.glob<{ default: string }>(
     '../../assets/*-card.jpg',

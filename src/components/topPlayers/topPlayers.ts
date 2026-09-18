@@ -1,6 +1,6 @@
-import './topPlayers.scss';
+import './TopPlayers.scss';
 import topPlayersData from '../../data/leaderboard.json';
-console.log(topPlayersData);
+
 interface Players {
   rank: number;
   playerName: string;
