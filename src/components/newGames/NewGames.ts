@@ -1,5 +1,7 @@
 import './NewGames.scss';
 import allTheGamesData from '../../data/all-games-seed.json';
+import star from '../../assets/star (1).png';
+import like from '../../assets/favorite.png';
 interface Game {
   slug: string;
   name: string;
@@ -46,8 +48,8 @@ export function newGames(): string {
       <div class="game-card ${initialCurrentIndex === i ? 'active-game' : i - 1 === initialCurrentIndex ? 'near-active' : i + 1 === initialCurrentIndex ? 'near-active' : 'non-active'}" style="--bg-img: url('${getBgUrl(game.slug)}');">
       <h3>${game.name}</h3>
       <div class="card-info-wrap" >
-        <span>${game.rating}</span>
-        <span>${game.likesCount}</span>
+        <span><img class="card-icon" src="${star}" alt="star icon" />${game.rating}</span>
+        <span><img class="card-icon" src="${like}" alt="like icon" />${game.likesCount}</span>
         </div>
       </div>
     `
