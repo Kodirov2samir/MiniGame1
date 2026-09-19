@@ -54,17 +54,20 @@ export function footer(): string {
       <p>
       © 2026 MiniGames. All rights reserved.
     </p>
-    <span>
+    <div class="mobile-visible">
+      <span>
       <a href=""><img src="${rsShoolsLogo}" alt="rs school logo"></a>
       <p>
       RS School
     </p>
     </span>
     <span>
-      <a href=""><img src="${devLogo}" alt="developer logo"></a>
+      <a href="">
+        <img src="${devLogo}" alt="developer logo">
+      </a>
       <p>@Kodirov2samir</p>
     </span>
-    <p>Programmed with love</p>
+    </div>
     </div>
       </div>
     </footer>
