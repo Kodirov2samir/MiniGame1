@@ -1,0 +1,116 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/breakpoints' as b;
+
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+.site-footer {
+  background-color: t.$color-footer-back;
+  color: white;
+  padding: 40px;
+
+  .footer-top-wrap {
+    @include flex-center(space-between, flex-start);
+    @include b.tablet {
+      flex-direction: column;
+      gap: 30px;
+    }
+    @include b.mobile {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .site-logo-container {
+      @include flex-center(center, flex-start);
+      max-width: 450px;
+      flex-direction: column;
+      gap: 20px;
+
+      p {
+        color: t.$color-text-footer-list;
+      }
+
+      .site-logo {
+        @include flex-center(center, flex-end);
+        gap: 10px;
+      }
+    }
+
+    .footer-lists-wrap {
+      @include flex-center(center, flex-start);
+      gap: 80px;
+      @media only screen and (max-width: 1100px) {
+        & {
+          gap: 40px;
+        }
+      }
+      @include b.mobile {
+        flex-wrap: wrap;
+
+        @include flex-center(flex-start);
+      }
+
+      .footer-list-wrap {
+        @include flex-center(center, flex-start);
+        flex-direction: column;
+        gap: 16px;
+
+        ul {
+          @include flex-center(center, flex-start);
+          flex-direction: column;
+          gap: 16px;
+          color: t.$color-text-footer-list;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          &.footer-icon-list {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+
+            li {
+              padding: 10px;
+              border-radius: 50%;
+              background-color: t.$color-bg-footer-low;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom-wrap {
+    @include flex-center(space-between);
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 2px solid t.$color-bg-footer-low;
+    color: t.$color-text-footer-list;
+
+    @media only screen and (max-width: 988px) {
+      & {
+        font-size: 12px;
+      }
+    }
+    @include b.mobile {
+      flex-direction: column;
+      gap: 30px;
+      align-items: flex-start;
+      font-size: 15px;
+    }
+    span {
+      @include flex-center();
+      gap: 10px;
+    }
+    .mobile-visible {
+      display: contents;
+      @include b.mobile {
+        @include flex-center(flex-start);
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
