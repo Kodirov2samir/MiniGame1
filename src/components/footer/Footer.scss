@@ -1,0 +1,78 @@
+@use '../../styles/tokens' as t;
+@use '../../styles/breakpoints' as b;
+
+@mixin flex-center($justify: center, $align: center, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+.site-footer {
+  background-color: t.$color-footer-back;
+  color: white;
+  padding: 40px;
+
+  .footer-top-wrap {
+    @include flex-center(space-between, flex-start);
+
+    .site-logo-container {
+      @include flex-center(center, flex-start);
+      max-width: 450px;
+      flex-direction: column;
+      gap: 20px;
+
+      p {
+        color: gray;
+      }
+
+      .site-logo {
+        @include flex-center(center, flex-end);
+        gap: 10px;
+      }
+    }
+
+    .footer-lists-wrap {
+      @include flex-center(center, flex-start);
+      gap: 80px;
+
+      .footer-list-wrap {
+        @include flex-center(center, flex-start);
+        flex-direction: column;
+        gap: 16px;
+
+        ul {
+          @include flex-center(center, flex-start);
+          flex-direction: column;
+          gap: 16px;
+          color: gray;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          &.footer-icon-list {
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+
+            li {
+              padding: 10px;
+              border-radius: 50%;
+              background-color: t.$color-bg-footer-low;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom-wrap {
+    @include flex-center(space-between);
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 1px solid t.$color-bg-footer-low;
+    span {
+      @include flex-center();
+      gap: 10px;
+    }
+  }
+}
