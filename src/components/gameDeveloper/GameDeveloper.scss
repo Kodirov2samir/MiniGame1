@@ -59,10 +59,10 @@
       }
     }
     p {
-      color: gray;
+      color: t.$color-text-secondary;
     }
     .dev-par-small {
-      font-size: 12px;
+      color: t.$color-text-secondary;
     }
     @include b.tablet {
       width: 100%;

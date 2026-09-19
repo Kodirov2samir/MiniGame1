@@ -30,7 +30,7 @@
       gap: 20px;
 
       p {
-        color: gray;
+        color: t.$color-text-footer-list;
       }
 
       .site-logo {
@@ -62,7 +62,7 @@
           @include flex-center(center, flex-start);
           flex-direction: column;
           gap: 16px;
-          color: gray;
+          color: t.$color-text-footer-list;
           list-style: none;
           padding: 0;
           margin: 0;
@@ -87,6 +87,7 @@
     margin-top: 60px;
     padding: 30px;
     border-top: 1px solid t.$color-bg-footer-low;
+    color: t.$color-text-footer-list;
 
     @media only screen and (max-width: 988px) {
       & {
