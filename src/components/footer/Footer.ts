@@ -20,7 +20,7 @@ export function footer(): string {
       <p>Take a short break and have fun. Hundreds of curated casual mini-games right in your web browser. No download required.</p>
     
     </div>
-    <div class="footer-lists-wrap">
+    <nav class="footer-lists-wrap">
       <div class="footer-list-wrap">
       <h3>Explore</h3>
       <ul>
@@ -43,12 +43,12 @@ export function footer(): string {
     <div class="footer-list-wrap">
       <h3>Community</h3>
       <ul class="footer-icon-list">
-        <li><a href=""><img src="${shareIcon}" alt="share icon"></a></li>
-        <li><a href=""><img src="${chatIcon}" alt="chat icon"></a></li>
-        <li><a href=""><img src="${rsFeedIcon}" alt="rs feed icon"></a></li>
+        <li><a href="https://rs.school/"><img src="${chatIcon}" alt="chat icon"></a></li>
+        <li><a href="https://rs.school/"><img src="${rsFeedIcon}" alt="rs feed icon"></a></li>
+        <li><a href="https://rs.school/"><img src="${shareIcon}" alt="share icon"></a></li>
       </ul>
     </div>
-    </div>
+    </nav>
        </div>
     <div class="footer-bottom-wrap">
       <p>
@@ -56,13 +56,13 @@ export function footer(): string {
     </p>
     <div class="mobile-visible">
       <span>
-      <a href=""><img src="${rsShoolsLogo}" alt="rs school logo"></a>
+      <a href="https://rs.school/"><img src="${rsShoolsLogo}" alt="rs school logo"></a>
       <p>
       RS School
     </p>
     </span>
     <span>
-      <a href="">
+      <a href="https://discordapp.com/users/763335084932595712">
         <img src="${devLogo}" alt="developer logo">
       </a>
       <p>@Kodirov2samir</p>

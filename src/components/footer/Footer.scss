@@ -86,7 +86,7 @@
     @include flex-center(space-between);
     margin-top: 60px;
     padding: 30px;
-    border-top: 1px solid t.$color-bg-footer-low;
+    border-top: 2px solid t.$color-bg-footer-low;
     color: t.$color-text-footer-list;
 
     @media only screen and (max-width: 988px) {
