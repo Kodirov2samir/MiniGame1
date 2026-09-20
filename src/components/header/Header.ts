@@ -20,8 +20,8 @@ export function siteHeader(): string {
       </nav>
 
       <div class="header-btn-wrap">
-      <a href="/login" class="log-in btn ${isLoggedIn ? 'is-hidden' : ''}">Log in</a>
-      <a href="/signup" class="sign-up btn ${isLoggedIn ? 'is-hidden' : ''}">Sign up</a>
+      <a href="/login" data-auth-open="login" class="log-in btn ${isLoggedIn ? 'is-hidden' : ''}">Log in</a>
+      <a href="/signup" data-auth-open="signup" class="sign-up btn ${isLoggedIn ? 'is-hidden' : ''}">Sign up</a>
       </div>
 
       <button class="burger-btn" id="burger-btn" aria-label="Open menu">
@@ -49,8 +49,8 @@ export function siteHeader(): string {
         </ul>
 
         <div class="mobile-btn-wrap">
-         <a href="/login" class="mobile-btn mobile-log-in ${isLoggedIn ? 'is-hidden' : ''}">Log In</a>
-         <a href="/signup" class="mobile-btn mobile-sign-up ${isLoggedIn ? 'is-hidden' : ''}">Sign Up</a>
+         <a href="/login" data-auth-open="login" class="mobile-btn mobile-log-in ${isLoggedIn ? 'is-hidden' : ''}">Log In</a>
+         <a href="/signup" data-auth-open="signup" class="mobile-btn mobile-sign-up ${isLoggedIn ? 'is-hidden' : ''}">Sign Up</a>
         </div>
       </div>
     </header>
