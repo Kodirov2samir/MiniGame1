@@ -1,4 +1,4 @@
-import './TopPlayers.scss';
+import './topPlayers.scss';
 import topPlayersData from '../../data/leaderboard.json';
 
 interface Players {
