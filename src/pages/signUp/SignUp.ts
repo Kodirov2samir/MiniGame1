@@ -6,10 +6,11 @@ import googleLogo from '../../assets/google_logo.png';
 export function signUp(): string {
   return /*html */ `
 
-  <div class="form-wrap">
+  <div class="page-wrap">
+    <div class="form-wrap">
     <div class="login-reg-wrap">
-      <button class="login-btn">Login</button>
-      <button class="register-btn">Register</button>
+      <a  class="login-btn" href="/login">Log in</a>
+      <a class="register-btn" href="">Register</a>
     </div>
     <div class="form-text-wrap">
       <h2>
@@ -52,8 +53,9 @@ export function signUp(): string {
       
   </form>
   <p class="have-acc">
-    Already have account? <a href="#">Login</a>
+    Already have account? <a href="/login">Login</a>
   </p>
+  </div>
   </div>
   `;
 }

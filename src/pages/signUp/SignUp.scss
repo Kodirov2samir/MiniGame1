@@ -5,12 +5,20 @@
   justify-content: $justify;
   flex-direction: $direction;
 }
+.page-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: t.$color-footer-back;
+  width: 100%;
+}
 .form-wrap {
   padding: 32px;
   background-color: t.$color-bg;
   box-shadow: t.$shadow-form;
   border-radius: 20px;
-  max-width: 420px;
+  width: 520px;
   @include flex-center(column, flex-start, flex-start);
   gap: 24px;
   .login-reg-wrap {
@@ -29,7 +37,7 @@
         background-color: t.$color-btn-fff-hover;
       }
     }
-    button {
+    a {
       border-radius: 7px;
       display: flex;
       flex-grow: 1;

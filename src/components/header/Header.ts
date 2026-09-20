@@ -20,7 +20,7 @@ export function siteHeader(): string {
 
       <div class="header-btn-wrap">
         <button type="button" class="log-in btn">Log in</button>
-        <button type="button" class="sign-up btn">Sign up</button>
+       <a href="/signup"> <button type="button" class="sign-up btn">Sign up</button></a>
       </div>
 
       <button class="burger-btn" id="burger-btn" aria-label="Open menu">
