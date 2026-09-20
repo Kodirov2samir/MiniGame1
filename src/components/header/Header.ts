@@ -12,7 +12,7 @@ export function siteHeader(): string {
 
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="/404" class="nav-link active">Home</a></li>
+          <li><a href="/" class="nav-link active">Home</a></li>
           <li><a href="/404" class="nav-link">Library</a></li>
           <li><a href="/404" class="nav-link">Tournaments</a></li>
           <li><a href="/404" class="nav-link">Community</a></li>
@@ -20,8 +20,8 @@ export function siteHeader(): string {
       </nav>
 
       <div class="header-btn-wrap">
-       <a href="/login"> <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="log-in btn">Log in</button></a>
-       <a href="/signup"> <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="sign-up btn">Sign up</button></a>
+      <a href="/login" style="${isLoggedIn ? 'display:none' : ''}" class="log-in btn">Log in</a>
+      <a href="/signup" style="${isLoggedIn ? 'display:none' : ''}" class="sign-up btn">Sign up</a>
       </div>
 
       <button class="burger-btn" id="burger-btn" aria-label="Open menu">
@@ -49,8 +49,8 @@ export function siteHeader(): string {
         </ul>
 
         <div class="mobile-btn-wrap">
-          <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="mobile-btn mobile-log-in">Log In</button>
-          <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="mobile-btn mobile-sign-up">Sign Up</button>
+         <a href="/login" style="${isLoggedIn ? 'display:none' : ''}" class="mobile-btn mobile-log-in">Log In</a>
+         <a href="/signup" style="${isLoggedIn ? 'display:none' : ''}" class="mobile-btn mobile-sign-up">Sign Up</a>
         </div>
       </div>
     </header>

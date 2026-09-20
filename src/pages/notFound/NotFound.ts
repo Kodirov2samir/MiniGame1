@@ -8,7 +8,7 @@ export function notFound(): string {
   </h1>
   <p>I am working on it</p>
    </div>
-  <a href="/"><button>Come back to home page</button></a>
+  <a href="/" class="not-found-button">Come back to home page</a>
   </div>
   `;
 }

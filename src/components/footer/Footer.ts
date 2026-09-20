@@ -55,18 +55,18 @@ export function footer(): string {
       © 2026 MiniGames. All rights reserved.
     </p>
     <div class="mobile-visible">
-      <span>
+      <div>
       <a href="https://rs.school/"><img src="${rsShoolsLogo}" alt="rs school logo"></a>
       <p>
       RS School
     </p>
-    </span>
-    <span>
+    </div>
+    <div>
       <a href="https://discordapp.com/users/763335084932595712">
         <img src="${devLogo}" alt="developer logo">
       </a>
       <p>@Kodirov2samir</p>
-    </span>
+    </div>
     </div>
     </div>
       </div>

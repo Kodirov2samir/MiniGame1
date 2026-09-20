@@ -100,7 +100,7 @@
       align-items: flex-start;
       font-size: 15px;
     }
-    span {
+    .mobile-visible > div {
       @include flex-center();
       gap: 10px;
     }

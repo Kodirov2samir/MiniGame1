@@ -9,7 +9,7 @@ export function hero(): string {
           <p class="hero-description">
             Discover hundreds of curated casual mini-games. Play instantly in your browser — puzzle, match 3, farm, and board classics.
           </p>
-          <a href="/404"><button type="button" class="browse-btn">Browse Library</button></a>
+          <a href="/404" class="browse-btn">Browse Library</a>
         </div>
       </div>
     </section>

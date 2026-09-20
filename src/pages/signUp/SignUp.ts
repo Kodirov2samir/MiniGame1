@@ -26,33 +26,33 @@ export function signUp(): string {
       <label for="username">Username</label>
     <div class="inp-wrap">
       <span><img src="${person}" alt="person icon"></span>
-      <input id="username" type="text" placeholder="e.g. CozyGamer_99">
+      <input id="username" type="text" placeholder="e.g. CozyGamer_99" autocomplete="username" required minlength="2">
     </div>
     </div>
      <div class="inp-lab-wrap">
       <label for="email">Email Address</label>
     <div class="inp-wrap">
       <span><img src="${mail}" alt="mail icon"></span>
-      <input id="email" type="text" placeholder="your.email@domain.com">
+      <input id="email" type="email" placeholder="your.email@domain.com" autocomplete="email" required>
     </div>
     </div>
      <div class="inp-lab-wrap">
       <label for="password">Password</label>
     <div class="inp-wrap">
       <span><img src="${lock}" alt="lock icon"></span>
-      <input id="password" type="text" placeholder="Min. 8 characters">
+      <input id="password" type="password" placeholder="Min. 8 characters" autocomplete="new-password" required minlength="8">
     </div>
     </div>
      <div class="inp-lab-wrap">
       <label for="confirm">Confirm Password</label>
     <div class="inp-wrap">
      <span><img src="${lock}" alt="lock icon"></span>
-      <input id="confirm" type="text" placeholder="Repeat your password">
+      <input id="confirm" type="password" placeholder="Repeat your password" autocomplete="new-password" required minlength="8">
     </div>
     </div>
-    <button class="form-btn btn">Create Account</button>
+    <button class="form-btn btn" type="submit">Create Account</button>
     <div class="form-devider"><span class="line"></span>OR<span class="line"></span></div>
-    <button type="submit" class="google-btn btn"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
+    <button type="button" class="google-btn btn"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
       
   </form>
   <p class="have-acc">
