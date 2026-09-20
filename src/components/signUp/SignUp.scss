@@ -1,0 +1,127 @@
+@use '../../styles/tokens' as t;
+@mixin flex-center($direction: row, $align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+.form-wrap {
+  padding: 32px;
+  background-color: t.$color-bg;
+  box-shadow: t.$shadow-form;
+  border-radius: 20px;
+  max-width: 420px;
+  @include flex-center(column, flex-start, flex-start);
+  gap: 24px;
+  .login-reg-wrap {
+    @include flex-center();
+    border: 2px solid t.$color-primary-text-border;
+    border-radius: 10px;
+    width: 100%;
+    .register-btn {
+      background-color: t.$color-bg-footer-low;
+
+      color: white;
+    }
+    .login-btn {
+      transition: 1s background-color ease;
+      &:hover {
+        background-color: t.$color-btn-fff-hover;
+      }
+    }
+    button {
+      border-radius: 7px;
+      display: flex;
+      flex-grow: 1;
+      padding: 14.5px;
+      @include flex-center();
+      font-weight: 800;
+    }
+  }
+  .form-text-wrap {
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+      color: t.$color-text-secondary;
+    }
+  }
+  .site-form {
+    @include flex-center(column);
+    gap: 16px;
+    width: 100%;
+    .inp-lab-wrap {
+      @include flex-center(column, flex-start);
+      gap: 8px;
+      color: black;
+      width: 100%;
+      font-weight: 700;
+    }
+    .inp-wrap {
+      padding: 14px;
+      border: 2px solid t.$color-primary-text-border;
+      border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background-color: white;
+      transition: background-color 0.3s ease;
+      &:focus-within {
+        background-color: t.$color-btn-fff-hover;
+      }
+      width: 100%;
+      input {
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+    .form-btn {
+      background-color: t.$color-btn;
+      box-shadow: t.$shodow-btn-form;
+      transition: 1s background-color ease;
+      &:hover {
+        background-color: t.$color-btn-gold-hover;
+      }
+    }
+  }
+  .form-devider {
+    width: 100%;
+    @include flex-center(row, center, space-between);
+    gap: 7.5px;
+    color: t.$color-text-secondary;
+    .line {
+      height: 1px;
+      border: 1px solid #c1c0c3;
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+  .btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+  }
+  .google-btn {
+    @include flex-center();
+    gap: 16px;
+    color: black;
+    border: 2px solid t.$color-primary-text-border;
+    background-color: white;
+    transition: 1s background-color ease;
+    &:hover {
+      background-color: t.$color-btn-fff-hover;
+    }
+  }
+  .have-acc {
+    width: 100%;
+    @include flex-center();
+    gap: 5px;
+    a {
+      font-weight: 700;
+      color: t.$color-primary-text-border;
+      border-bottom: 1px solid t.$color-primary-text-border;
+    }
+  }
+}
