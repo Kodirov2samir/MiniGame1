@@ -80,6 +80,9 @@
     }
 
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       padding: 8px 16px;
       border: 2px solid t.$color-primary-text-border;
@@ -218,6 +221,9 @@
       padding-bottom: 10px;
 
       .mobile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         padding: 14px;
         border-radius: 8px;

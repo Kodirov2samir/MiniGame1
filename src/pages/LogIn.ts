@@ -25,19 +25,19 @@ export function logIn(): string {
       <label for="email">Email Address</label>
     <div class="inp-wrap">
       <span><img src="${mail}" alt="mail icon"></span>
-      <input id="email" type="text" placeholder="your.email@domain.com">
+      <input id="email" type="email" placeholder="your.email@domain.com" autocomplete="email" required>
     </div>
     </div>
      <div class="inp-lab-wrap">
       <label for="password">Password</label>
     <div class="inp-wrap">
       <span><img src="${lock}" alt="lock icon"></span>
-      <input id="password" type="text" placeholder="Min. 8 characters">
+      <input id="password" type="password" placeholder="Min. 8 characters" autocomplete="current-password" required minlength="8">
     </div>
     </div>
-    <button class="form-btn btn">Log In</button>
+    <button class="form-btn btn" type="submit">Log In</button>
     <div class="form-devider"><span class="line"></span>OR<span class="line"></span></div>
-    <button class="google-btn btn"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
+    <button class="google-btn btn" type="button"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
       
   </form>
   <p class="have-acc">

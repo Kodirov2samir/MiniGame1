@@ -11,7 +11,7 @@ export function gameDeveloper(): string {
       <p>Want to see your game on MiniGames? We're always looking for fun,
 engaging mini games to add to our platform. Submit your game
 and reach thousands of players!</p>
-<button class="dev-btn"><span><img src="${submitIcon}" alt="upload icon"></span>Submit  Form</button>
+<button class="dev-btn" type="button"><span><img src="${submitIcon}" alt="upload icon"></span>Submit  Form</button>
 <p class="dev-par-small">or contact us at developers@minigames.com</p>
     </div>
     </div>
