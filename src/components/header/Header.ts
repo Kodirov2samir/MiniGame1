@@ -12,10 +12,10 @@ export function siteHeader(): string {
 
       <nav class="nav">
         <ul class="nav-list">
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#library" class="nav-link">Library</a></li>
-          <li><a href="#tournaments" class="nav-link">Tournaments</a></li>
-          <li><a href="#community" class="nav-link">Community</a></li>
+          <li><a href="/404" class="nav-link active">Home</a></li>
+          <li><a href="/404" class="nav-link">Library</a></li>
+          <li><a href="/404" class="nav-link">Tournaments</a></li>
+          <li><a href="/404" class="nav-link">Community</a></li>
         </ul>
       </nav>
 
