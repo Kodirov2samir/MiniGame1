@@ -5,6 +5,7 @@ import { initNewGamesEvents, newGames } from './components/newGames/NewGames';
 import { topPlayers } from './components/topPlayers/topPlayers';
 import { gameDeveloper } from './components/gameDeveloper/GameDeveloper';
 import { footer } from './components/footer/Footer';
+import { signUp } from './components/signUp/SignUp';
 const app = document.getElementById('app');
 if (app) {
   app.innerHTML = `${siteHeader()} <main>
@@ -13,7 +14,9 @@ if (app) {
   ${topPlayers()}
   ${gameDeveloper()}
   </main>
-  ${footer()}`;
+  ${footer()}
+  ${signUp()}
+  `;
   initHeaderEvents();
   initNewGamesEvents();
 }

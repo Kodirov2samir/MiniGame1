@@ -39,7 +39,11 @@ button {
   font-weight: 700;
   color: inherit;
 }
-
+input {
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
 .container {
   width: 100%;
   max-width: 1600px;
