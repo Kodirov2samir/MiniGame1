@@ -1,8 +1,10 @@
 import './SignUp.scss';
+import type { User } from './userType';
 import lock from '../../assets/lock (1).png';
 import person from '../../assets/person.png';
 import mail from '../../assets/mail (1).png';
 import googleLogo from '../../assets/google_logo.png';
+import { navigate } from '../../router/index';
 export function signUp(): string {
   return /*html */ `
 
@@ -18,38 +20,39 @@ export function signUp(): string {
     </h2>
     <p>Join MiniGames to track your score & streak.</p>
     </div>
-    <form class="site-form" action="">
+    <div id="error"></div>
+    <form class="site-form" action="/" method="GET">
     <div class="inp-lab-wrap">
-      <label for="">Username</label>
+      <label for="username">Username</label>
     <div class="inp-wrap">
       <span><img src="${person}" alt="person icon"></span>
-      <input type="text" placeholder="e.g. CozyGamer_99">
+      <input id="username" type="text" placeholder="e.g. CozyGamer_99">
     </div>
     </div>
      <div class="inp-lab-wrap">
-      <label for="">Email Address</label>
+      <label for="email">Email Address</label>
     <div class="inp-wrap">
       <span><img src="${mail}" alt="mail icon"></span>
-      <input type="text" placeholder="your.email@domain.com">
+      <input id="email" type="text" placeholder="your.email@domain.com">
     </div>
     </div>
      <div class="inp-lab-wrap">
-      <label for="">Password</label>
+      <label for="password">Password</label>
     <div class="inp-wrap">
       <span><img src="${lock}" alt="lock icon"></span>
-      <input type="text" placeholder="Min. 8 characters">
+      <input id="password" type="text" placeholder="Min. 8 characters">
     </div>
     </div>
      <div class="inp-lab-wrap">
-      <label for="">Confirm Password</label>
+      <label for="confirm">Confirm Password</label>
     <div class="inp-wrap">
      <span><img src="${lock}" alt="lock icon"></span>
-      <input type="text" placeholder="Repeat your password">
+      <input id="confirm" type="text" placeholder="Repeat your password">
     </div>
     </div>
     <button class="form-btn btn">Create Account</button>
     <div class="form-devider"><span class="line"></span>OR<span class="line"></span></div>
-    <button class="google-btn btn"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
+    <button type="submit" class="google-btn btn"><span><img src="${googleLogo}" alt="google logo"></span>Sign up with Google</button>
       
   </form>
   <p class="have-acc">
@@ -58,4 +61,44 @@ export function signUp(): string {
   </div>
   </div>
   `;
+}
+
+export function initSignUpEvents(): void {
+  const form = document.querySelector<HTMLFormElement>('.site-form');
+
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const usernameInput = document.querySelector<HTMLInputElement>('#username');
+    const emailInput = document.querySelector<HTMLInputElement>('#email');
+    const passwordInput = document.querySelector<HTMLInputElement>('#password');
+    const confirmInput = document.querySelector<HTMLInputElement>('#confirm');
+
+    const username = usernameInput?.value || '';
+    const email = emailInput?.value || '';
+    const password = passwordInput?.value || '';
+    const confirm = confirmInput?.value || '';
+
+    if (password !== confirm) {
+      alert('Passwords dont match');
+      return;
+    }
+
+    const user: User = {
+      username,
+      email,
+      password,
+      vefified: true,
+    };
+
+    localStorage.setItem('user', JSON.stringify(user));
+    sessionStorage.setItem('isLoggedIn', 'true');
+    sessionStorage.setItem('currentUser', username);
+    alert('User Signed up successfully');
+
+    form.reset();
+    navigate('/');
+  });
 }

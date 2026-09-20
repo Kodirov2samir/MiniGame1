@@ -7,11 +7,14 @@ export function handleRoute(): void {
   if (!main) return;
 
   const path = window.location.pathname;
-
   const route = routes[path] || routes['/404'];
 
   if (route) {
     main.innerHTML = route.render();
+
+    if (route.initEvents) {
+      route.initEvents();
+    }
   } else {
     main.innerHTML = '<h2>Page is not found</h2>';
   }
@@ -24,6 +27,6 @@ export function navigate(path: string): void {
 
 export function initRouter(routesConfig: Record<string, Route>): void {
   routes = routesConfig;
-
+  window.addEventListener('popstate', handleRoute);
   handleRoute();
 }
