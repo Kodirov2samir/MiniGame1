@@ -25,8 +25,8 @@ export function topPlayers(): string {
   const eachPlayer = players
     .map((item) => {
       return `
-    <tr style="${item.rank % 2 === 0 ? 'background-color:#F9F8F3' : 'background-color:white'}">
-    <td style="${item.rank === 1 ? 'color:#FFD02B' : ''}">#${item.rank}</td>
+    <tr class="${item.rank % 2 === 0 ? 'row-even' : 'row-odd'}">
+    <td class="${item.rank === 1 ? 'rank-first' : ''}">#${item.rank}</td>
     <td><span class="name-initials">${item.playerName
       .split('')
       .filter(

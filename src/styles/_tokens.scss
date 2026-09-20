@@ -9,9 +9,17 @@ $color-footer-back: #1e1b3a;
 $color-bg-footer-low: #2a264f;
 $color-text-secondary: #5f5d75;
 $color-text-footer-list: #b9b5c9;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-overlay: rgba(30, 27, 58, 0.75);
+$color-overlay-dark: rgba(0, 0, 0, 0.85);
+$color-mobile-link: rgba(255, 255, 255, 0.6);
+$color-leaderboard-header: #3a2ebf;
+$color-table-stripe: #f9f8f3;
+$color-form-divider: #c1c0c3;
 
 $font-family-base: 'Inter', sans-serif;
 
-$shadow-black: 8px 8px 0px 0px #242145;
-$shadow-form: 8px 8px 0px 0px #000;
-$shodow-btn-form: 0px 4px 0px 0px #242145;
+$shadow-black: 8px 8px 0px 0px $color-primary-text-border;
+$shadow-form: 8px 8px 0px 0px $color-black;
+$shodow-btn-form: 0px 4px 0px 0px $color-primary-text-border;

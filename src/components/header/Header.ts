@@ -20,8 +20,8 @@ export function siteHeader(): string {
       </nav>
 
       <div class="header-btn-wrap">
-      <a href="/login" style="${isLoggedIn ? 'display:none' : ''}" class="log-in btn">Log in</a>
-      <a href="/signup" style="${isLoggedIn ? 'display:none' : ''}" class="sign-up btn">Sign up</a>
+      <a href="/login" class="log-in btn ${isLoggedIn ? 'is-hidden' : ''}">Log in</a>
+      <a href="/signup" class="sign-up btn ${isLoggedIn ? 'is-hidden' : ''}">Sign up</a>
       </div>
 
       <button class="burger-btn" id="burger-btn" aria-label="Open menu">
@@ -42,15 +42,15 @@ export function siteHeader(): string {
         </div>
 
         <ul class="mobile-nav-list">
-          <li><a href="#home" class="mobile-link active">Home</a></li>
-          <li><a href="#library" class="mobile-link">Library</a></li>
-          <li><a href="#tournaments" class="mobile-link">Tournaments</a></li>
-          <li><a href="#community" class="mobile-link">Community</a></li>
+          <li><a href="/" class="mobile-link active">Home</a></li>
+          <li><a href="/404" class="mobile-link">Library</a></li>
+          <li><a href="/404" class="mobile-link">Tournaments</a></li>
+          <li><a href="/404" class="mobile-link">Community</a></li>
         </ul>
 
         <div class="mobile-btn-wrap">
-         <a href="/login" style="${isLoggedIn ? 'display:none' : ''}" class="mobile-btn mobile-log-in">Log In</a>
-         <a href="/signup" style="${isLoggedIn ? 'display:none' : ''}" class="mobile-btn mobile-sign-up">Sign Up</a>
+         <a href="/login" class="mobile-btn mobile-log-in ${isLoggedIn ? 'is-hidden' : ''}">Log In</a>
+         <a href="/signup" class="mobile-btn mobile-sign-up ${isLoggedIn ? 'is-hidden' : ''}">Sign Up</a>
         </div>
       </div>
     </header>
