@@ -2,6 +2,7 @@ import './Header.scss';
 import siteLogo from '../../assets/site-logo.png';
 
 export function siteHeader(): string {
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
   return /* html */ `
     <header class="site-header container">
       <div class="logo-box">
@@ -19,8 +20,8 @@ export function siteHeader(): string {
       </nav>
 
       <div class="header-btn-wrap">
-        <button type="button" class="log-in btn">Log in</button>
-       <a href="/signup"> <button type="button" class="sign-up btn">Sign up</button></a>
+       <a href="/login"> <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="log-in btn">Log in</button></a>
+       <a href="/signup"> <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="sign-up btn">Sign up</button></a>
       </div>
 
       <button class="burger-btn" id="burger-btn" aria-label="Open menu">
@@ -48,8 +49,8 @@ export function siteHeader(): string {
         </ul>
 
         <div class="mobile-btn-wrap">
-          <button type="button" class="mobile-btn mobile-log-in">Log In</button>
-          <button type="button" class="mobile-btn mobile-sign-up">Sign Up</button>
+          <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="mobile-btn mobile-log-in">Log In</button>
+          <button style="${isLoggedIn ? 'display:none' : ''}" type="button" class="mobile-btn mobile-sign-up">Sign Up</button>
         </div>
       </div>
     </header>
