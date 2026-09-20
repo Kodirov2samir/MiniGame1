@@ -2,6 +2,7 @@ import type { Route } from './types';
 import { HomePage, initHomePageEvents } from '../pages/HomePage';
 import { signUp, initSignUpEvents } from '../pages/signUp/SignUp';
 import { logIn, initLogInEvents } from '../pages/LogIn';
+import { notFound } from '../pages/notFound/NotFound';
 
 export const routes: Record<string, Route> = {
   '/': {
@@ -18,5 +19,9 @@ export const routes: Record<string, Route> = {
     path: '/login',
     render: logIn,
     initEvents: initLogInEvents,
+  },
+  '/404': {
+    path: '/404',
+    render: notFound,
   },
 };
