@@ -29,7 +29,7 @@
     .register-btn {
       background-color: t.$color-bg-footer-low;
 
-      color: white;
+      color: t.$color-white;
     }
     .login-btn {
       transition: 1s background-color ease;
@@ -73,7 +73,7 @@
       display: flex;
       gap: 10px;
       align-items: center;
-      background-color: white;
+      background-color: t.$color-white;
       transition: background-color 0.3s ease;
       &:focus-within {
         background-color: t.$color-btn-fff-hover;
@@ -100,7 +100,7 @@
     color: t.$color-text-secondary;
     .line {
       height: 1px;
-      border: 1px solid #c1c0c3;
+      border: 1px solid t.$color-form-divider;
       display: flex;
       flex-grow: 1;
     }
@@ -114,9 +114,9 @@
   .google-btn {
     @include flex-center();
     gap: 16px;
-    color: black;
+    color: t.$color-black;
     border: 2px solid t.$color-primary-text-border;
-    background-color: white;
+    background-color: t.$color-white;
     transition: 1s background-color ease;
     &:hover {
       background-color: t.$color-btn-fff-hover;

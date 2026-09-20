@@ -14,12 +14,12 @@ export function logIn(): string {
       <a class="login-btn" href="/signup">Register</a>
     </div>
     <div class="form-text-wrap">
-      <h2>
+      <h1>
       Welcome Back
     </h2>
     <p>Sign in to resume your games and progress.</p>
     </div>
-    <form class="site-form" action="">
+    <form class="site-form" action="/" method="GET">
    
      <div class="inp-lab-wrap">
       <label for="email">Email Address</label>

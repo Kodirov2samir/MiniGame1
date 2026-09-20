@@ -15,9 +15,9 @@ export function signUp(): string {
       <a class="register-btn" href="">Register</a>
     </div>
     <div class="form-text-wrap">
-      <h2>
+      <h1>
       Create Account
-    </h2>
+    </h1>
     <p>Join MiniGames to track your score & streak.</p>
     </div>
     <div id="error"></div>

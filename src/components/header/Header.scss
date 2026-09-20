@@ -41,7 +41,7 @@
       }
 
       &.title-white {
-        color: #ffffff;
+        color: t.$color-white;
       }
     }
   }
@@ -178,7 +178,7 @@
         background: t.$color-bg-footer-low;
         border: none;
         border-radius: 8px;
-        color: #ffffff;
+        color: t.$color-white;
         font-size: 20px;
         cursor: pointer;
         display: flex;
@@ -198,7 +198,7 @@
       .mobile-link {
         font-size: 18px;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.6);
+        color: t.$color-mobile-link;
         text-decoration: none;
         transition: color 0.2s ease;
 
@@ -208,7 +208,7 @@
         }
 
         &:hover {
-          color: #ffffff;
+          color: t.$color-white;
         }
       }
     }
@@ -235,8 +235,8 @@
 
       .mobile-log-in {
         background: transparent;
-        border: 2px solid #ffffff;
-        color: #ffffff;
+        border: 2px solid t.$color-white;
+        color: t.$color-white;
       }
 
       .mobile-sign-up {

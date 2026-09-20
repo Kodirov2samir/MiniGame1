@@ -14,7 +14,7 @@
   overflow: hidden;
   box-shadow: t.$shadow-black;
   .section-table-head {
-    background-color: #3a2ebf;
+    background-color: t.$color-leaderboard-header;
     color: white;
     @include b.mobile {
       font-size: 10px;
@@ -32,10 +32,18 @@
       border-radius: 50%;
     }
     tr {
-      background-color: white;
+      background-color: t.$color-white;
 
-      &:nth-child(even) {
-        background-color: #f9f8f3;
+      &.row-even {
+        background-color: t.$color-table-stripe;
+      }
+
+      &.row-odd {
+        background-color: t.$color-white;
+      }
+
+      .rank-first {
+        color: t.$color-btn;
       }
 
       @include b.tablet {
