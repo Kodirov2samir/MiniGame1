@@ -1,6 +1,7 @@
 import type { Route } from './types';
 import { HomePage, initHomePageEvents } from '../pages/HomePage';
 import { signUp } from '../pages/signUp/SignUp';
+import { logIn } from '../pages/LogIn';
 
 export const routes: Record<string, Route> = {
   '/': {
@@ -11,5 +12,9 @@ export const routes: Record<string, Route> = {
   '/signup': {
     path: '/signup',
     render: signUp,
+  },
+  '/login': {
+    path: '/login',
+    render: logIn,
   },
 };
