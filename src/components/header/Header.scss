@@ -1,0 +1,247 @@
+@use '../../styles//tokens' as t;
+@use '../../styles/breakpoints' as b;
+
+@mixin flex-align {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header {
+  @include flex-align;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+
+  .logo-box {
+    @include flex-align;
+    gap: 12px;
+
+    .logo-img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .title {
+      font-size: 28px;
+      color: t.$color-primary-text-border;
+
+      @include b.tablet {
+        font-size: 22px;
+      }
+
+      @include b.mobile {
+        font-size: 17px;
+      }
+
+      &.title-white {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .nav {
+    @include flex-align;
+    margin-left: auto;
+
+    @include b.mobile {
+      display: none;
+    }
+
+    .nav-list {
+      @include flex-align;
+      gap: 20px;
+      list-style: none;
+
+      .nav-link {
+        color: t.$color-primary-text-border;
+        transition: font-weight 0.2s ease;
+
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .header-btn-wrap {
+    @include flex-align;
+    gap: 12px;
+    margin-left: 24px;
+
+    @include b.mobile {
+      display: none;
+    }
+
+    .btn {
+      cursor: pointer;
+      padding: 8px 16px;
+      border: 2px solid t.$color-primary-text-border;
+      border-radius: 6px;
+      font-weight: 600;
+      transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+      @include b.tablet {
+        padding: 5px 13px;
+      }
+    }
+
+    .sign-up {
+      background-color: t.$color-btn;
+
+      &:hover {
+        background-color: t.$color-btn-gold-hover;
+      }
+    }
+
+    .log-in {
+      background-color: transparent;
+
+      &:hover {
+        background-color: t.$color-btn-fff-hover;
+      }
+    }
+  }
+
+  .burger-btn {
+    display: none;
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    border: 2px solid t.$color-primary-text-border;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+
+    @include b.mobile {
+      display: flex;
+    }
+
+    &:hover {
+      background-color: t.$color-btn-fff-hover;
+    }
+
+    .burger-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: 18px;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: t.$color-primary-text-border;
+        border-radius: 1px;
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: t.$color-bg-footer;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.is-open {
+      display: flex;
+    }
+
+    .mobile-menu-header {
+      @include flex-between;
+
+      .close-btn {
+        width: 36px;
+        height: 36px;
+        background: t.$color-bg-footer-low;
+        border: none;
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+
+      .mobile-link {
+        font-size: 18px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &.active {
+          color: t.$color-btn;
+          font-weight: 700;
+        }
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .mobile-btn-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: auto;
+      padding-bottom: 10px;
+
+      .mobile-btn {
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
+
+      .mobile-log-in {
+        background: transparent;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+      }
+
+      .mobile-sign-up {
+        background-color: t.$color-btn;
+        border: none;
+        color: t.$color-primary-text-border;
+
+        &:hover {
+          background-color: t.$color-btn-gold-hover;
+        }
+      }
+    }
+  }
+}

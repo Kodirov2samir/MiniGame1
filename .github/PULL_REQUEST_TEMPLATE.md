@@ -1,20 +1,43 @@
 ## Description
 
-Set up initial project repository, Vite bundler, TypeScript, ESLint, Prettier, Husky, and Sass design tokens.
+<!-- Briefly describe the purpose of this pull request. -->
 
-## Task
+## Related Task
 
-MiniGames Story 1 - Repository Setup & Development Environment Configuration
+<!-- Add the task, issue, or rubric item this PR addresses. -->
 
-## What was done
+MiniGames Story 1:
 
-- Set up Vite + TypeScript project structure
-- Configured ESLint, Prettier, and Husky hooks
-- Added Sass setup with design tokens and breakpoints
-- Created initial folder structure for components, pages, and styles
+## Changes Made
 
-## Checklist before review
+<!-- List the main implementation changes. -->
 
-- [ ] `npm run lint` passes without errors
-- [ ] `npm run format` completed
-- [ ] No `console.log` or `any` types in code
+-
+-
+-
+
+## Implementation Notes
+
+<!-- Mention important technical decisions, limitations, or follow-up work. -->
+
+## Testing
+
+<!-- Describe how the changes were verified. Include commands and results. -->
+
+- [ ] `npm run lint`
+- [ ] `npm run build`
+- [ ] `npx prettier --check Readme.md`
+- [ ] Tested the affected layout at mobile, tablet, and desktop breakpoints
+
+## Screenshots
+
+<!-- Add before/after screenshots or write "Not applicable". -->
+
+## Review Checklist
+
+- [ ] The implementation follows the existing project structure and style conventions
+- [ ] No unrelated changes are included
+- [ ] No `console.log` calls or explicit `any` types were added
+- [ ] Semantic HTML and accessible labels are included where needed
+- [ ] Responsive behavior was checked at the required breakpoints
+- [ ] Documentation was updated when necessary
